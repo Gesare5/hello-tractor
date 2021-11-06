@@ -1,0 +1,11 @@
+
+#list-item{
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    font-size: 20px;
+    box-shadow: 1px 5px 15px -10px #3A3A3A; 
+    margin-bottom: 1rem;
+}
