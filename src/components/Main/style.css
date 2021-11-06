@@ -14,18 +14,19 @@
 #add-farm{
     display: flex;
     padding: 1rem;
-    width: 52vw;
+    width: 60vw;
     background: white;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 #add-farm input{
     padding: 1rem;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
 }
 
 #input-div{
     display: flex;
     flex-direction: column;
+    
 }
 #input-div label{
     margin-left: 1rem;
@@ -54,10 +55,10 @@
      display: flex;
      justify-content: space-between;
      align-items: center;
-     width: 52vw;
+     width: 100%;
      height: 8vh;
      background: linear-gradient(to right, #FC275F, #FF481D);
-     border-radius: 15px 15px 0px 0px;
+     /* border-radius: 15px 15px 0px 0px; */
      padding: 0rem 1.5rem;
      /* margin-bottom: 1rem; */
  }
@@ -81,7 +82,7 @@
 
  #farm-list{
      background: white;
-     padding: 0.9rem;
+     padding: 0.9rem 0rem;
  }
 
  .marker-btn {
@@ -90,6 +91,15 @@
   cursor: pointer;
 }
 
+.container-list{
+    border-radius: 15px 15px 0px 0px;
+    width:60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
 /* .marker-btn img {
   width: 20px;
   height: 20px;
