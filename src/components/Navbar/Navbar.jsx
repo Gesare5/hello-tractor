@@ -8,7 +8,7 @@ function Navbar() {
         <nav id="navbar">
             <img src={hello} alt="" style={{ background: "transparent" }} />
             <ul id="nav-links">
-                <li><a href="/home">Home</a></li>
+                <li><a href="#app">Home</a></li>
             </ul>
         </nav>
     );

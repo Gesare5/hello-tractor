@@ -4,6 +4,7 @@ import { data } from '../../Datastore/data';
 import ListItem from '../ListItem/ListItem';
 import './style.css';
 import MapComponent from '../MapComponent';
+import Footer from '../Footer';
 
 const initialValues = { farmName: "", distance: "" };
 
@@ -137,6 +138,7 @@ function Main() {
                     </ul>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

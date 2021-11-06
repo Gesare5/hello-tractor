@@ -104,3 +104,15 @@
   width: 20px;
   height: 20px;
 } */
+
+footer {
+    margin-top: 1.5rem;
+    background: linear-gradient(transparent, rgb(192, 190, 190)) ;
+  text-align: center;
+  padding: 3.125em 1.25em;
+  font-size: larger;
+}
+
+footer p{
+    background: none;
+}
