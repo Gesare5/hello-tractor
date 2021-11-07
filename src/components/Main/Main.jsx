@@ -27,8 +27,6 @@ function Main() {
             [name]: value,
         });
         console.log(farm);
-        // setFarm({ ...farm, coordinates: [] })
-        // console.log(farm);
         setToOptimize(false);
     }
 
@@ -39,8 +37,8 @@ function Main() {
         data.push(farm);
         console.log(data);
         setFarm(initialValues);
-    }
 
+    }
 
     // function to sort in ascending order using distance
     const optimize = () => {
