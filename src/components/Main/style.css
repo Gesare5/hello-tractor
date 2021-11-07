@@ -16,20 +16,21 @@
     padding: 1rem;
     width: 60vw;
     background: white;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 #add-farm input{
     padding: 1rem;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 
 #input-div{
     display: flex;
     flex-direction: column;
-    
-}
-#input-div label{
     margin-left: 1rem;
+}
+#input-div input{
+    border: 1px solid #3A3A3A;
+    
 }
 
 #input-submit{
@@ -41,6 +42,7 @@
     font-size: 15px;
     height: 3.2rem;
     margin-top: 1.2rem; 
+    margin-left:1rem ;
  }
 
  #input-submit:hover{
@@ -115,4 +117,29 @@ footer {
 
 footer p{
     background: none;
+}
+
+@media (max-width: 800px) {
+  #add-farm{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 60vw;
+    background: white;
+    margin-bottom: 3rem;
+}
+}
+
+@media (max-width: 800px) {
+    .all-inputs-div{
+        display: flex;
+        flex-direction: column;
+}
+}
+
+.buttons-div{
+   display: flex; 
+}
+.all-inputs-div{
+display: flex;
 }

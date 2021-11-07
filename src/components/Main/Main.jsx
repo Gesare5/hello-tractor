@@ -5,8 +5,9 @@ import ListItem from '../ListItem/ListItem';
 import './style.css';
 import MapComponent from '../MapComponent';
 import Footer from '../Footer';
+import AddFarmForm from '../AddFarmForm';
 
-const initialValues = { farmName: "", distance: "" };
+const initialValues = { farmName: "", distance: "", coordinates: [] };
 
 function Main() {
 
@@ -17,6 +18,7 @@ function Main() {
 
     //    handles input
     const getInput = (e) => {
+        e.preventDefault();
         const { name, value } = e.target;
         console.log(name);
         console.log(value);
@@ -25,10 +27,11 @@ function Main() {
             [name]: value,
         });
         console.log(farm);
-        setFarm({ ...farm, coordinates: [] })
-        console.log(farm);
-        // setToOptimize(false);
+        // setFarm({ ...farm, coordinates: [] })
+        // console.log(farm);
+        setToOptimize(false);
     }
+
 
     // handles form submission
     const handleSubmit = (e) => {
@@ -38,6 +41,7 @@ function Main() {
         console.log(data);
         setFarm(initialValues);
     }
+
 
     // function to sort in ascending order using distance
     const optimize = () => {
@@ -49,7 +53,7 @@ function Main() {
         setToOptimize(true);
     }
 
-    // function to calculate co-ordinates
+    // function to calculate co-ordinates using distance
     // reverse haversine-formula
     const farmLocation = (distanc) => {
         // //const bearing = 312.6893942836867
@@ -82,37 +86,16 @@ function Main() {
                      passing farms array as a prop to the child */}
                     <MapComponent farms={farms} />
                 </div>
-                <form action="" id="add-farm" onSubmit={handleSubmit}>
+                <div>
+                    <AddFarmForm
+                        handleSubmit={handleSubmit}
+                        optimize={optimize}
+                        getInput={getInput}
+                        farm={farm}
+                    />
 
-                    <div id="input-div" >
-                        <label htmlFor="">Farm Name</label>
-                        <input
-                            type="number"
-                            name="farmName"
-                            value={farm.farmName}
-                            onChange={getInput}
-                            required
-                        />
-                    </div>
+                </div>
 
-                    <div id="input-div" style={{ background: "white" }}>
-                        <label htmlFor="">Distance</label>
-                        <input
-                            type="text"
-                            name="distance"
-                            value={farm.distance}
-                            onChange={getInput}
-                            required
-                        />
-                    </div>
-
-                    <div >
-                        <input type="submit" value="ADD" id="input-submit" />
-                    </div>
-                    <div>
-                        <button id="optimize-btn" onClick={optimize}>OPTIMIZE</button>
-                    </div>
-                </form>
                 <div className="container-list">
                     <div id="farms-header">
                         <h3 style={{ background: "transparent" }}>Farms</h3>

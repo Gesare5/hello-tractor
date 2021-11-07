@@ -3,6 +3,7 @@ import hello from './hello-tractor.png';
 // import loo from './logo.svg';
 import './style.css';
 
+// Navbar component
 function Navbar() {
     return (
         <nav id="navbar">
