@@ -34,6 +34,6 @@ their tractors to farms. It aims to do this without wasting much time or resourc
 
 ![image](./src/hello-tractor3.png)
 
-##### Farms - re-ordered
+##### Farms - re-ordered/on optimize
 
 ![image](./src/hello-tractor4.png)
