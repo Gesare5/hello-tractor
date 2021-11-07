@@ -24,16 +24,16 @@ their tractors to farms. It aims to do this without wasting much time or resourc
 
 ##### Full-page
 
-![image](./hello-tractor1.png)
+![image](./src/hello-tractor1.png)
 
 ##### Marker with Popup On Mouse Hover
 
-![image](./hello-tractor2.png)
+![image](./src/hello-tractor2.png)
 
 ##### Added Farms - unordered 
 
-![image](./hello-tractor3.png)
+![image](./src/hello-tractor3.png)
 
 ##### Farms - re-ordered
 
-![image](./hello-tractor4.png)
+![image](./src/hello-tractor4.png)
