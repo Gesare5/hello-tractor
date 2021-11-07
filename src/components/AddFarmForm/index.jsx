@@ -16,7 +16,7 @@ function AddFarmForm({ handleSubmit, optimize, getInput, farm }) {
                 </div>
 
                 <div id="input-div" style={{ maxWidth: "40%", background: "white" }}>
-                    <label htmlFor="">Distance</label>
+                    <label htmlFor="">Distance(kM)</label>
                     <input
                         type="number"
                         name="distance"

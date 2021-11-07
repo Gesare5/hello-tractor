@@ -32,7 +32,6 @@ function Main() {
         setToOptimize(false);
     }
 
-
     // handles form submission
     const handleSubmit = (e) => {
         e.preventDefault();
