@@ -1,7 +1,7 @@
 export const data = [
     {
         farmName: "Lama",
-        distance: 1,
+        distance: 3,
         coordinates: []
     },
     {
@@ -17,6 +17,16 @@ export const data = [
     {
         farmName: "Juma",
         distance: 1,
+        coordinates: []
+    },
+    {
+        farmName: "Perry",
+        distance: 5,
+        coordinates: []
+    },
+    {
+        farmName: "Milima",
+        distance: 10,
         coordinates: []
     }
 ];

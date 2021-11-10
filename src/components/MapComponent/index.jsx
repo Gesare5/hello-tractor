@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import marker from '../../mapbox-marker-icon-purple.svg';
+import mapbox from '../../mapbox-marker-icon-red.svg';
 
 
 function MapComponent({ farms }) {
@@ -8,17 +9,19 @@ function MapComponent({ farms }) {
     const MAPBOX_TOKEN = "pk.eyJ1IjoiZ2VzYXJlIiwiYSI6ImNrdm5qeW9ocjNhOG0yd3E1YjU3b2hncTIifQ.2jNUf16hFtTfQGvxrSjaUQ";
 
     const [selectedFarm, setSelectedFarm] = useState(null);
+    const [tractor, setTractor] = useState(true);
 
     // defines map initial features, static map, 
     // for an interactive map the viewport is changed using setviewport
-    const [viewport, setViewport] = useState({
+    // const [viewport, setViewport] = useState({
+    const viewport = {
         latitude: -1.1018,
         longitude: 37.0144,
         // 1.1018° S, 37.0144° juja,kenya, original map center
         width: "60vw",
         height: "60vh",
         zoom: 10
-    });
+    };
 
     return (
 
@@ -55,6 +58,19 @@ function MapComponent({ farms }) {
                         </button>
                     </Marker>
                 ))}
+                <Marker
+                    latitude={-1.1635}
+                    longitude={37.0813}
+                >
+                    <button className="marker-btn"
+                        onClick={e => {
+                            e.preventDefault();
+                            setTractor(true);
+                        }}
+                    >
+                        <img src={mapbox} alt=" Tractor location Icon" />
+                    </button>
+                </Marker>
 
                 {/* creates a popup with farmname and distance onmouseover/hover */}
                 {selectedFarm ? (
@@ -68,6 +84,20 @@ function MapComponent({ farms }) {
                         <div>
                             <h3>{selectedFarm.farmName}</h3>
                             <p>Distance: {selectedFarm.distance}</p>
+                        </div>
+                    </Popup>
+                ) : null}
+                {/* pop up for tractor location*/}
+                {tractor ? (
+                    <Popup
+                        latitude={-1.1635}
+                        longitude={37.0813}
+                        onClose={() => {
+                            setTractor(false);
+                        }}
+                    >
+                        <div>
+                            <p>Tractor</p>
                         </div>
                     </Popup>
                 ) : null}
