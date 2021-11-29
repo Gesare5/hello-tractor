@@ -12,16 +12,16 @@ function MapComponent({ farms }) {
     const [tractor, setTractor] = useState(true);
 
     // defines map initial features, static map, 
-    // for an interactive map the viewport is changed using setviewport
-    // const [viewport, setViewport] = useState({
-    const viewport = {
+    // made the map interactive
+    const [viewport, setViewport] = useState({
+        // const viewport = {
         latitude: -1.1018,
         longitude: 37.0144,
         // 1.1018° S, 37.0144° juja,kenya, original map center
         width: "60vw",
         height: "60vh",
         zoom: 10
-    };
+    });
 
     return (
 
@@ -31,8 +31,7 @@ function MapComponent({ farms }) {
             <ReactMapGL {...viewport}
                 mapStyle="mapbox://styles/mapbox/streets-v11"
                 mapboxApiAccessToken={MAPBOX_TOKEN}
-            // mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-            // onViewportChange={viewport => { setViewport(viewport); }}
+                onViewportChange={viewport => { setViewport(viewport); }}
             >
                 {/* loops through farms array, displaying each farm co-ordinate
                     , which is a prop passed down from parent(Main.jsx) */}

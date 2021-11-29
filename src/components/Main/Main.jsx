@@ -11,6 +11,11 @@ const initialValues = { farmName: "", distance: "", coordinates: [] };
 
 function Main() {
 
+    // NOTE: Removed the use effect, it was what was forcing the map to rerender constantly,
+    //  hence the error due to too many requests to the API
+    // This also enabled me to make the map interactive, 
+    // One can now change the center location of the map by dragging the mouse 
+
     const [farm, setFarm] = useState(initialValues);
     const [toOptimize, setToOptimize] = useState(false);
     const [dataArray, setDataArray] = useState(data);
@@ -33,11 +38,12 @@ function Main() {
     // handles form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        farm.distance = parseFloat(farm.distance);
+        farm.distance = parseFloat(farm.distance); //converts the string distance input to numerical
+        farm.coordinates = farmLocation(farm.distance); //calculates co-ordinates of the newly added farm
         data.push(farm);
         console.log(data);
         setFarm(initialValues);
-
+        setFarms(data);
     }
 
     // function to sort in ascending order using distance
@@ -67,12 +73,6 @@ function Main() {
         let long2 = longitude2 * 180 / Math.PI;
         return [lat2, long2];
     }
-
-    // allows rerendering anytime data changes/when a farm is added
-    useEffect(() => {
-        data.map((location) => (location.coordinates = farmLocation(location.distance)));
-        setFarms(data);
-    }, [dataArray]);
 
     return (
         <div id="main-div">
